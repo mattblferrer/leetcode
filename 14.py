@@ -1,5 +1,5 @@
 class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str:
+    def longestCommonPrefix(self, strs: list[str]) -> str:
         longest_prefix = strs[0]  # list of characters in first word
 
         # check every word for prefix until non-matching char is found
