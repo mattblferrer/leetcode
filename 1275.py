@@ -43,7 +43,7 @@ class Solution:
                 return 'B'
             return ''
 
-        def checkDraw(grid: [list[list[int]]]) -> bool:
+        def checkDraw(grid: list[list[int]]) -> bool:
             for row in grid:
                 for square in row:
                     if square == '':  # check for empty squares
