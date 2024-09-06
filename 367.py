@@ -4,15 +4,14 @@ class Solution:
             return True
 
         left, right = 0, num  # initial guess
-
-        while left != right and left != right - 1:
+        while left <= right:
             guess = (left + right) // 2
             square = guess * guess
             if square == num:  # square root found
                 return True
             if square > num:
-                right = guess
+                right = guess - 1
             elif square < num: 
-                left = guess
+                left = guess + 1
 
         return False
