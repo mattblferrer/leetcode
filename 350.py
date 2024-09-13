@@ -1,6 +1,6 @@
 class Solution:
     def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
-        def returnFrequency(nums: list[str]) -> dict[int, int]:
+        def returnFrequency(nums: list[int]) -> dict[int, int]:
             frequencies = dict()
             for n in nums:
                 if n not in frequencies:
