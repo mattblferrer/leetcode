@@ -8,16 +8,16 @@ class Solution:
             for y in range(x + 1, n):
                 if gcd(x, y) != 1:  # not coprime (Euclid's formula constraint)
                     continue
-                if x % 2 == 1 and y % 2 == 1:
+                if x % 2 == 1 and y % 2 == 1:  # at least one x, y even 
                     continue
                     
-                a = y ** 2 - x ** 2
-                b = 2 * x * y
-                c = y ** 2 + x ** 2
-                if c > n:  # stop looping, no triple below limit will be found
+                a = y*y - x*x
+                b = 2*x*y
+                c = y*y + x*x
+                if c > n:  # stop checking y, no new triple will be found
                     break
                 while c <= n: 
                     triples += 2  # account for pairs (a, b, c), (b, a, c)
-                    c += y ** 2 + x ** 2
+                    c += y*y + x*x
 
         return triples
