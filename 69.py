@@ -1,13 +1,20 @@
 class Solution:
-    # implementation of Newton-Raphson method
     def mySqrt(self, x: int) -> int:
-        if x == 0:
-            return 0
-        guess = x / 2  # initial guess
+        if x in [0, 1]:  # edge case
+            return x
 
-        # approximation loop
-        for _ in range(20):
-            guess = 0.5 * (guess + x / guess)
+        left, right = 0, x  # binary search
+        while left != right:
+            guess = (left + right) // 2
+            l_square = guess * guess
+            r_square = (guess + 1) * (guess + 1)
 
-        return int(guess)
+            if l_square <= x < r_square:  # true sqrt in [l_square, r_square]
+                return guess
+            if l_square > x:  # true sqrt below guess
+                right = guess
+            else:  # true sqrt above guess
+                left = guess + 1
+
+        return guess
     
