@@ -1,5 +1,5 @@
 class Solution:
-    def queensAttacktheKing(self, queens: list[list[int]], king: list[int]) -> list[List[int]]:
+    def queensAttacktheKing(self, queens: list[list[int]], king: list[int]) -> list[list[int]]:
         can_attack = []
         x_king, y_king = king
 
